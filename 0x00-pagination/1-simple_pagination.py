@@ -3,17 +3,16 @@
     page with default value 1 and page_size with default value 10.
     Use assert to verify that both arguments are integers greater than 0.
     Use index_range to find the correct indexes to paginate the dataset
-    correctly and return the appropriate page of the dataset
+    correctly and return the appropriate page of the dataset.
     If the input arguments are out of range for the dataset,
     an empty list should be returned.
 '''
 
 import csv
-import math
-from typing import List
+from typing import List, Tuple
 
 
-def index_range(page, page_size):
+def index_range(page: int, page_size: int) -> Tuple[int, int]:
     '''
     Calculate the start and end index for pagination.
         Args:
@@ -28,16 +27,16 @@ def index_range(page, page_size):
 
 
 class Server:
-    '''Server class to paginate a database of popular baby names.
-    '''
+    '''Server class to paginate a database of popular baby names.'''
+
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
+        '''Initializes a new Server instance.'''
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        '''Cached dataset
-        '''
+        '''Cached dataset.'''
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
