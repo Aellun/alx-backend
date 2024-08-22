@@ -8,6 +8,8 @@ Class:
 '''
 
 BaseCaching = __import__('base_caching').BaseCaching
+
+
 class BasicCache(BaseCaching):
     '''
     This class implements a simple caching system
