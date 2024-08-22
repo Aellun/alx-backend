@@ -1,22 +1,13 @@
 #!/usr/bin/python3
-BaseCaching = __import__('base_caching').BaseCaching
+'''BasicCache module that implements a simple caching system.
 
-'''class BasicCache that inherits from BaseCaching and is a caching system
-    Requirement:
-            must use self.cache_data -
-            dictionary from the parent class BaseCaching
-            This caching system doesn’t have limit
-            def put(self, key, item):
-            Must assign to the dictionary self.cache_data
-            the item value for the key key.
-            If key or item is None, this method should not do anything.
-            def get(self, key):
-            Must return the value in self.cache_data linked to key.
-            If key is None or if the key doesn’t exist in self.cache_data
-            return None.
+Class:
+    BasicCache: A class that inherits from BaseCaching and implements
+    a caching system
+                without any size limit
 '''
 
-
+BaseCaching = __import__('base_caching').BaseCaching
 class BasicCache(BaseCaching):
     '''
     This class implements a simple caching system
@@ -41,9 +32,7 @@ class BasicCache(BaseCaching):
         Returns:
             None: If either key or item is None, the method does nothing.
         '''
-        if key is None or item is None:
-            pass
-        else:
+        if key is not None and item is not None:
             self.cache_data[key] = item
 
     def get(self, key):
@@ -57,6 +46,4 @@ class BasicCache(BaseCaching):
             or None if the key is None
             or does not exist in the cache.
         '''
-        if key is None or key not in self.cache_data.keys():
-            return None
-        return self.cache_data.get(key)
+        return self.cache_data.get(key) if key is not None else None
