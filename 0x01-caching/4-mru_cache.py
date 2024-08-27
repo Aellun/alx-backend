@@ -53,10 +53,8 @@ class MRUCache(BaseCaching):
         Retrieves an item from the cache by key.
             If the key is accessed, it is considered recently used and moved
             to the end of the access order list.
-
         Args:
             key (str): The key of the item to retrieve.
-
         Returns:
             any: The value associated with the key, or None if the key
                  is None or does not exist in the cache.
