@@ -37,18 +37,20 @@ babel = Babel(app)
 def get_user():
     '''
     Returns a user dictionary or None if ID value is not found
-    or if 'login_as' URL parameter was not found
+    or if 'login_as' URL parameter was not found.
     '''
-    id = request.args.get('login_as', None)
-    if id is not None and int(id) in users.keys():
-        return users.get(int(id))
-    return None
+    id = request.args.get('login_as')
+    try:
+        id = int(id)
+    except (TypeError, ValueError):
+        return None
+    return users.get(id)
 
 
 @app.before_request
 def before_request():
     '''
-    Aadd user to flask app
+    Add user to Flask's g object before each request
     '''
     user = get_user()
     g.user = user
