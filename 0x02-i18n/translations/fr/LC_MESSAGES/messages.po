@@ -3,8 +3,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: fr\n"
 
+# Context: Home page title
 msgid "home_title"
 msgstr "Bienvenue chez Holberton"
 
+# Context: Home page header
 msgid "home_header"
 msgstr "Bonjour monde!"

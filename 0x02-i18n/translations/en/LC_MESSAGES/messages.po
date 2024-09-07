@@ -3,8 +3,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language: en\n"
 
+# Context: Home page title
+msgctxt "home title"
 msgid "home_title"
 msgstr "Welcome to Holberton"
 
+# Context: Home page header
+msgctxt "home header"
 msgid "home_header"
 msgstr "Hello world!"
