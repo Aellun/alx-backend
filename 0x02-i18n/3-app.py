@@ -70,5 +70,6 @@ def index():
 
 
 if __name__ == '__main__':
+    '''Start the application in debug mode for development and testing'''
 
     app.run(debug=True)
